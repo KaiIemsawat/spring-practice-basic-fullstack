@@ -29,8 +29,8 @@
             <div>
                 <label th:for="${hasOnline}">Has Online Class : </label>
                 <span th:if="${#fields.hasErrors('hasOnline')}" th:errors="*{hasOnline}"></span>
-                <input type="radio" th:field="*{hasOnline}" value="Yes" /> Yes
-                <input type="radio" th:field="*{hasOnline}" value="No" /> No
+                <input type="radio" th:field="*{hasOnline}" value="1" /> Yes
+                <input type="radio" th:field="*{hasOnline}" value="0" /> No
             </div>
             <div>
                 <label th:for="${hasInPerson}">Offers In-Person Class</label>

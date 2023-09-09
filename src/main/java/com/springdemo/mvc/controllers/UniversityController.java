@@ -24,7 +24,8 @@ public class UniversityController {
     }
 
     @GetMapping("/universities")
-    public String allUniversitiesPage() {
+    public String allUniversitiesPage(Model viewModel) {
+        viewModel.addAttribute("universities", universityService.findAllUniversities());
         return "universities";
     }
 
