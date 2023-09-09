@@ -25,7 +25,7 @@ public class UniversityService {
     }
 
 //    Get one university by id
-    public University getOneUniversityById(Long id) {
+    public University findOneUniversityById(Long id) {
         Optional<University> optionalUniversity = universityRepo.findById(id);
 
 //        if(optionalUniversity.isPresent()) {
