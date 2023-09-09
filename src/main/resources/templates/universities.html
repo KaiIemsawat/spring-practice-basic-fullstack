@@ -20,11 +20,11 @@
             </thead>
             <tbody>
                 <tr th:each="university : ${universities}">
+                    <td th:text="${university.universityId}" />
                     <td>
                         <!-- Dynamic link with thymeleaf-->
-                        <a th:href="@{/universities/${university.universityId}}" th:text="${university.universityId}"/>
+                        <a th:href="@{'/universities/' + ${university.universityId}}"  th:text="${university.name}"/>
                     </td>
-                    <td th:text="${university.name}"/>
                     <td th:text="${university.city}"/>
                     <td>Links will be here</td>
                 </tr>
