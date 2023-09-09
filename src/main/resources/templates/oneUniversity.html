@@ -9,11 +9,11 @@
 <body>
   <div class="container-fluid">
     <h1>About : <span th:text="${thisUniversity.name}"/></h1>
-    <h1>City : <span th:text="${thisUniversity.city}"/></h1>
-    <h1>Offers Online Class : <span th:text="${thisUniversity.hasOnline}"/></h1>
-    <h1>Offers In-Person Class : <span th:text="${thisUniversity.hasInPerson}"/></h1>
-    <h1>Enrollment : <span th:text="${thisUniversity.enrollment}"/></h1>
-    <h1>Year Founded : <span th:text="${thisUniversity.yearFounded}"/></h1>
+    <p>City : <span th:text="${thisUniversity.city}"/></p>
+    <p>Offers Online Class : <span th:text="${thisUniversity.hasOnline}"/></p>
+    <p>Offers In-Person Class : <span th:text="${thisUniversity.hasInPerson}"/></p>
+    <p>Enrollment : <span th:text="${thisUniversity.enrollment}"/> students</p>
+    <p>Year Founded : <span th:text="${thisUniversity.yearFounded}"/></p>
     <a href="/universities" class="btn btn-primary">All Universities</a>
   </div>
 

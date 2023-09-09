@@ -26,7 +26,9 @@
                         <a th:href="@{'/universities/' + ${university.universityId}}"  th:text="${university.name}"/>
                     </td>
                     <td th:text="${university.city}"/>
-                    <td>Links will be here</td>
+                    <td>
+                        <a th:href="@{/universities/edit(uid=${university.universityId})}" class="btn btn-secondary">Edit</a>
+                    </td>
                 </tr>
             </tbody>
         </table>

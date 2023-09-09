@@ -27,15 +27,6 @@ public class UniversityService {
 //    Get one university by id
     public University findOneUniversityById(Long id) {
         Optional<University> optionalUniversity = universityRepo.findById(id);
-
-//        if(optionalUniversity.isPresent()) {
-//            return optionalUniversity.get();
-//        }
-//        else {
-//            System.out.println("ID " + id + " not found");
-//            return null;
-//        }
-//        Can be replaced with next line
         return optionalUniversity.orElseGet(() -> null);
     }
 

@@ -2,6 +2,7 @@ package com.springdemo.mvc.controllers;
 
 import com.springdemo.mvc.models.University;
 import com.springdemo.mvc.services.UniversityService;
+import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -45,6 +46,27 @@ public class UniversityController {
             return "newUniversity";
         }
         universityService.createUniversity(aNewUniversity);
-        return "redirect:/";
+        return "redirect:/universities";
+    }
+
+    @GetMapping("/universities/edit")
+    public String editOneUniversityPage(@RequestParam("uid") Long theId, Model viewModel) {
+        viewModel.addAttribute("thisUniversity", universityService.findOneUniversityById(theId));
+        return "editUniversity";
+    }
+
+    @PutMapping("/universities/edit")
+    public String editUniversity(
+            @Valid @ModelAttribute("thisUniversity") University updatedUniversity,
+            BindingResult result
+            ) {
+        System.out.println("Inside editUniversity method");
+
+        if(result.hasErrors()) {
+            return "editUniversity";
+        }
+        universityService.updateUniversity(updatedUniversity);
+        return "redirect:/universities";
+
     }
 }
