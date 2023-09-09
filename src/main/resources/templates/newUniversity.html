@@ -9,6 +9,7 @@
 <body>
     <div>
         <h1>Input new university</h1>
+        <a href="/universities" class="btn btn-primary">All Universities</a>
         <form action="/universities/new" th:object="${newUniversity}" method="POST">
             <div>
                 <label th:for="${city}">City : </label>

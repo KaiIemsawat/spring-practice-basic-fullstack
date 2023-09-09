@@ -10,4 +10,5 @@ import java.util.List;
 public interface UniversityRepo extends CrudRepository<University, Long> {
     List<University> findAll();
 
+    List<University> findAllByOrderByNameDesc(); // <- SELECT * FROM universities ORDER BY name DESC
 }
