@@ -9,6 +9,16 @@
 <body>
 <div>
   <h1>Edit <span th:text="${thisUniversity.name}"/></h1>
+
+<!--  <form th:action="@{'/universities/delete/' + ${thisUniversity.universityId}}" th:object="${thisUniversity}" method="post">-->
+<!--    <input type="hidden" name="_method" value="delete" />-->
+<!--    <button type="submit" id="submitButton" class="btn btn-danger"-->
+<!--            onClick="if (!(confirm('Please confirm if you wish to delete this university'))) return false">-->
+<!--      Delete-->
+<!--    </button>-->
+<!--  </form>-->
+
+
 <!--  <form th:action="@{'/universities/'+${thisUniversity.universityId}+'/edit'}" th:object="${thisUniversity}" th:method="POST">-->
   <form action="#" th:action="@{/universities/edit}" th:object="${thisUniversity}" th:method="put">
       <!--  The below tag is required for PUT/DELETE request  -->

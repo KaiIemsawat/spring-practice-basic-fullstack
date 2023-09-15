@@ -67,6 +67,12 @@ public class UniversityController {
         }
         universityService.updateUniversity(updatedUniversity);
         return "redirect:/universities";
-
     }
+
+    @DeleteMapping("/universities/delete/{uid}")
+    public String delete(@PathVariable("uid") Long theId) {
+        universityService.deleteUniversity(theId);
+        return "redirect:/universities";
+    }
+
 }

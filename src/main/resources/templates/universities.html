@@ -26,8 +26,19 @@
                         <a th:href="@{'/universities/' + ${university.universityId}}"  th:text="${university.name}"/>
                     </td>
                     <td th:text="${university.city}"/>
-                    <td>
-                        <a th:href="@{/universities/edit(uid=${university.universityId})}" class="btn btn-secondary">Edit</a>
+                    <td class="d-flex justify-content-start">
+                        <a th:href="@{/universities/edit(uid=${university.universityId})}" class="btn btn-secondary">
+                            Edit
+                        </a>
+
+                        <!-- To DELETE, a <form> tag is needed -->
+                        <form th:action="@{'/universities/delete/' + ${university.universityId}}" th:object="${university}" method="post">
+                            <input type="hidden" name="_method" value="delete" />
+                            <button type="submit" id="submitButton" class="btn btn-danger"
+                                    onClick="if (!(confirm('Please confirm if you wish to delete this university'))) return false">
+                                Delete
+                            </button>
+                        </form>
                     </td>
                 </tr>
             </tbody>
